@@ -1,20 +1,20 @@
 //
-//  ViewController.swift
+//  DetailsViewController.swift
 //  Pursuit-Core-iOS-Episodes-from-Online
 //
-//  Created by Benjamin Stone on 9/5/19.
+//  Created by Maitree Bain on 12/13/19.
 //  Copyright © 2019 Benjamin Stone. All rights reserved.
 //
 
 import UIKit
 
-class ShowsViewController: UIViewController {
+class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
+    
 
 }
-

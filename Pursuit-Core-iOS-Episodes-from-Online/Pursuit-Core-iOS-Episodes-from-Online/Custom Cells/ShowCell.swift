@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ShowCell: UITableViewCell {
-
+class ShowsCell: UITableViewCell {
+    
     
 
 }
