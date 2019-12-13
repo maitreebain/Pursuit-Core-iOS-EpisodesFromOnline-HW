@@ -51,6 +51,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="showImage" destination="JXw-R4-eic" id="wyb-SC-8LU"/>
+                                            <outlet property="showName" destination="Ssf-KU-GRx" id="2M6-A8-jJQ"/>
                                             <segue destination="HuU-Sx-XTq" kind="show" id="AQR-vs-F9N"/>
                                         </connections>
                                     </tableViewCell>
@@ -74,6 +76,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="2r9-Og-Ib6"/>
+                    <connections>
+                        <outlet property="showsTableView" destination="yFX-vm-dLm" id="v3e-tz-UCR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
