@@ -19,19 +19,34 @@ class ShowsCell: UITableViewCell {
         
         showName.text = shows.show.name
         
+//
+//        ShowsAPIClient.getShows(for: shows.image.medium) { [weak self] (result) in
+//
+//            switch result{
+//            case .failure(let appError):
+//                print("app Error: \(appError)")
+////                DispatchQueue.main.async {
+////                    self?.showImage.image = UIImage(systemName: "exclamationmark.triangle")
+////                }
+//            case .success(<#T##[ShowsDataLoad]#>)
+//        }
+//
+        
+        
         guard let url = URL(string: shows.image.medium) else {
             print("no show url found")
+            return
         }
-        
+
         let request = URLRequest(url: url)
-        
-        NetworkHelper.shared.performDataTask(with: request) { (result) in
-            
+
+        NetworkHelper.shared.performDataTask(with: request) { [weak self] (result) in
+
             switch result{
             case .failure(let appError):
                 print("appError: \(appError)")
             case .success(let data):
-                
+                self?.showImage.image = UIImage(data: data)
             }
         }
     }

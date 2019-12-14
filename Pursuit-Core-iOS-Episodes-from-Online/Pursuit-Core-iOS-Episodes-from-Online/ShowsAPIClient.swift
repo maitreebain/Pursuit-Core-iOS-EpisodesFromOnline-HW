@@ -30,6 +30,7 @@ struct ShowsAPIClient {
                 
                 do {
                     let shows = try JSONDecoder().decode([ShowsDataLoad].self, from: data)
+                    
                     completion(.success(shows))
                 }
                 catch {

@@ -27,6 +27,12 @@ class ShowsViewController: UIViewController {
         showsTableView.delegate = self
     }
 
+    func loadData() {
+        
+        
+        
+        NetworkHelper.shared.performDataTask(with: <#T##URLRequest#>, completion: <#T##(Result<Data, AppError>) -> ()#>)
+    }
 
 }
 
@@ -42,12 +48,11 @@ extension ShowsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "showsCell", for: indexPath) as? ShowsCell else {
             fatalError("didn't conform to custom cell")
-            
-            let selectedShow = shows[indexPath.row]
-            
-            
-            
-            return cell
         }
-    }
+        let selectedShow = shows[indexPath.row]
+            
+        cell.configureCell(for: selectedShow)
+            
+        return cell
+        }
 }
