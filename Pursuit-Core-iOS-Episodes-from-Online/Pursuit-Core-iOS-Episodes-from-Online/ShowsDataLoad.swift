@@ -10,17 +10,17 @@ import Foundation
 
 struct ShowsDataLoad: Decodable {
     let show: Name
-    let rating: Rating
-    let image: Images
-    let summary: String
 }
 
 struct Name: Decodable {
     let name: String
+    let rating: Rating?
+    let image: Images?
+    let summary: String?
 }
 
 struct Rating: Decodable {
-    let average: Double
+    let average: Double?
 }
 
 struct Images: Decodable {

@@ -12,6 +12,8 @@ class ShowsViewController: UIViewController {
 
     @IBOutlet weak var showsTableView: UITableView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var shows = [ShowsDataLoad](){
         didSet {
             DispatchQueue.main.async {
@@ -20,18 +22,39 @@ class ShowsViewController: UIViewController {
         }
     }
     
+    var searchQuery = "" {
+        didSet {
+            self.searchBarQuery()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         showsTableView.dataSource = self
         showsTableView.delegate = self
+        loadData(for: "")
+        searchBar.delegate = self
     }
 
-    func loadData() {
+    func loadData(for showSearch: String) {
         
         
-        
-        NetworkHelper.shared.performDataTask(with: <#T##URLRequest#>, completion: <#T##(Result<Data, AppError>) -> ()#>)
+        ShowsAPIClient.getShows(for: showSearch) { (result) in
+            
+            switch result {
+            case .failure(let appError):
+                print("appError: \(appError)")
+            case .success(let shows):
+                self.shows = shows
+                dump(shows)
+            }
+        }
+    }
+    
+    func searchBarQuery() {
+        print(searchQuery.lowercased())
+        shows = shows.filter{ ($0.show.name.lowercased().contains(searchQuery.lowercased()))}
     }
 
 }
@@ -55,4 +78,18 @@ extension ShowsViewController: UITableViewDataSource, UITableViewDelegate {
             
         return cell
         }
+}
+
+extension ShowsViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if !searchText.isEmpty {
+            loadData(for: searchText)
+        }
+        searchQuery = searchText
+    }
 }

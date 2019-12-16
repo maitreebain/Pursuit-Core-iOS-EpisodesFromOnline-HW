@@ -12,7 +12,7 @@ struct ShowsAPIClient {
     
     static func getShows(for showSearch: String, completion: @escaping (Result<[ShowsDataLoad], AppError>) -> ()) {
     
-        let showsEndPointURL = "http://api.tvmaze.com/search/shows?q=\(showSearch)"
+        let showsEndPointURL = "https://api.tvmaze.com/search/shows?q=\(showSearch)"
         
         guard let url = URL(string: showsEndPointURL) else {
             completion(.failure(.badURL(showsEndPointURL)))
@@ -27,11 +27,12 @@ struct ShowsAPIClient {
             case .failure(let appError):
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
-                
+                dump(data)
                 do {
                     let shows = try JSONDecoder().decode([ShowsDataLoad].self, from: data)
                     
                     completion(.success(shows))
+                    //dump(shows)
                 }
                 catch {
                     completion(.failure(.decodingError(error)))
