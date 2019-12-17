@@ -161,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="1930.4347826086957" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="nMF-By-cxF">
             <objects>
-                <viewController id="VaK-Md-5b8" sceneMemberID="viewController">
+                <viewController id="VaK-Md-5b8" customClass="DetailsViewController" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qxr-Gw-wna">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,6 +222,13 @@
                         <viewLayoutGuide key="safeArea" id="IEG-WC-0Zp"/>
                     </view>
                     <navigationItem key="navigationItem" id="XEi-sS-Ddt"/>
+                    <connections>
+                        <outlet property="episodeImage" destination="OdC-h3-eAK" id="3Gu-GY-4Kc"/>
+                        <outlet property="episodeLabel" destination="qaC-vc-6UI" id="DoL-he-N0R"/>
+                        <outlet property="episodeNameLabel" destination="Smc-lJ-MC4" id="fVf-4a-4eH"/>
+                        <outlet property="episodeTextView" destination="J6q-3T-fRL" id="7NU-6b-844"/>
+                        <outlet property="seasonLabel" destination="TjQ-DC-DSW" id="4zy-pt-vJt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ok-Ik-ghX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

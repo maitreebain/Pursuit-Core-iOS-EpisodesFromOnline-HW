@@ -43,6 +43,16 @@ class EpisodesViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailsViewController = segue.destination as? DetailsViewController,
+            let indexPath = episodesTableView.indexPathForSelectedRow else {
+                fatalError("no segue found")
+        }
+        let selectedEpisode = episodesData[indexPath.row]
+        
+        detailsViewController.episodes = selectedEpisode
+    }
+    
 }
 
 extension EpisodesViewController: UITableViewDataSource, UITableViewDelegate {
