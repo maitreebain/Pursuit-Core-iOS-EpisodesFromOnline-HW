@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8002680823A850FC00B06E9D /* EpisodesDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002680723A850FC00B06E9D /* EpisodesDataLoad.swift */; };
+		8002680C23A852AB00B06E9D /* EpisodesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002680B23A852AB00B06E9D /* EpisodesAPIClient.swift */; };
 		803D67FE23A2CB9C008FD4B6 /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803D67FD23A2CB9C008FD4B6 /* ShowCell.swift */; };
 		80B5577E23A426B6004A3776 /* EpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B5577D23A426B6004A3776 /* EpisodesCell.swift */; };
 		80B5578023A42720004A3776 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B5577F23A42720004A3776 /* EpisodesViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8002680723A850FC00B06E9D /* EpisodesDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesDataLoad.swift; sourceTree = "<group>"; };
+		8002680B23A852AB00B06E9D /* EpisodesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesAPIClient.swift; sourceTree = "<group>"; };
 		803D67FD23A2CB9C008FD4B6 /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
 		80B5577D23A426B6004A3776 /* EpisodesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCell.swift; sourceTree = "<group>"; };
 		80B5577F23A42720004A3776 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8002680923A8510200B06E9D /* Data Loads */ = {
+			isa = PBXGroup;
+			children = (
+				80B5578F23A42E47004A3776 /* ShowsDataLoad.swift */,
+				8002680723A850FC00B06E9D /* EpisodesDataLoad.swift */,
+				8002680A23A8529300B06E9D /* API Clients */,
+			);
+			path = "Data Loads";
+			sourceTree = "<group>";
+		};
+		8002680A23A8529300B06E9D /* API Clients */ = {
+			isa = PBXGroup;
+			children = (
+				80B5578D23A42D8E004A3776 /* ShowsAPIClient.swift */,
+				8002680B23A852AB00B06E9D /* EpisodesAPIClient.swift */,
+			);
+			path = "API Clients";
+			sourceTree = "<group>";
+		};
 		80B5577823A424FA004A3776 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +160,7 @@
 			children = (
 				CD01CD5B232178AF002D0255 /* AppDelegate.swift */,
 				CD01CD5F232178AF002D0255 /* Main.storyboard */,
-				80B5578F23A42E47004A3776 /* ShowsDataLoad.swift */,
-				80B5578D23A42D8E004A3776 /* ShowsAPIClient.swift */,
+				8002680923A8510200B06E9D /* Data Loads */,
 				80B5578423A428B0004A3776 /* Network Services */,
 				80B5577823A424FA004A3776 /* Custom Cells */,
 				80B5578123A4272C004A3776 /* View Controllers */,
@@ -263,6 +285,8 @@
 				80B5578023A42720004A3776 /* EpisodesViewController.swift in Sources */,
 				803D67FE23A2CB9C008FD4B6 /* ShowCell.swift in Sources */,
 				80B5577E23A426B6004A3776 /* EpisodesCell.swift in Sources */,
+				8002680823A850FC00B06E9D /* EpisodesDataLoad.swift in Sources */,
+				8002680C23A852AB00B06E9D /* EpisodesAPIClient.swift in Sources */,
 				CD01CD5E232178AF002D0255 /* ShowsViewController.swift in Sources */,
 				80B5578C23A42CEC004A3776 /* UIViewControllers+Alerts.swift in Sources */,
 				80FD7CE923A82F7A0061CB28 /* UIImageView+Extensions.swift in Sources */,

@@ -33,7 +33,7 @@ class ShowsViewController: UIViewController {
         
         showsTableView.dataSource = self
         showsTableView.delegate = self
-        loadData(for: "")
+        loadData(for: "friends")
         searchBar.delegate = self
     }
 
@@ -55,6 +55,16 @@ class ShowsViewController: UIViewController {
     func searchBarQuery() {
         print(searchQuery.lowercased())
         shows = shows.filter{ ($0.show.name.lowercased().contains(searchQuery.lowercased()))}
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let episodesViewController = segue.destination as? EpisodesViewController,
+        let indexPath = showsTableView.indexPathForSelectedRow else {
+            fatalError("no segue found")
+        }
+        let showSelected = shows[indexPath.row]
+        
+        episodesViewController.shows = showSelected
     }
 
 }

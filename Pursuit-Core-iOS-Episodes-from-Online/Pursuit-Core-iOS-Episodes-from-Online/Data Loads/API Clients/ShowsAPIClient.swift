@@ -32,7 +32,6 @@ struct ShowsAPIClient {
                     let shows = try JSONDecoder().decode([ShowsDataLoad].self, from: data)
                     
                     completion(.success(shows))
-                    //dump(shows)
                 }
                 catch {
                     completion(.failure(.decodingError(error)))

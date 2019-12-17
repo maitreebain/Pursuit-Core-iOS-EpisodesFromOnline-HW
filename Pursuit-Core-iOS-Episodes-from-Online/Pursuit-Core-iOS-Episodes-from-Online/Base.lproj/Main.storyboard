@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Episodes View Controller-->
         <scene sceneID="4za-l5-Vu2">
             <objects>
-                <viewController id="HuU-Sx-XTq" sceneMemberID="viewController">
+                <viewController id="HuU-Sx-XTq" customClass="EpisodesViewController" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DQB-G4-Kfw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +106,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dEH-Pv-pBh">
                                                     <rect key="frame" x="8" y="8" width="206" height="124"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTg-uL-I3j">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTg-uL-I3j">
                                                     <rect key="frame" x="222" y="19" width="152" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -134,6 +134,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="episodeDetail" destination="Rb5-Xp-a3Q" id="9O9-9e-ta8"/>
+                                            <outlet property="episodeImageView" destination="dEH-Pv-pBh" id="fpC-8S-6xh"/>
+                                            <outlet property="episodeName" destination="OTg-uL-I3j" id="9N1-RZ-F49"/>
                                             <segue destination="VaK-Md-5b8" kind="show" id="tpb-dy-ydi"/>
                                         </connections>
                                     </tableViewCell>
@@ -150,6 +153,9 @@
                         <viewLayoutGuide key="safeArea" id="eru-mC-IMv"/>
                     </view>
                     <navigationItem key="navigationItem" id="ViS-yN-7vP"/>
+                    <connections>
+                        <outlet property="episodesTableView" destination="4kw-yY-8UH" id="RSr-eV-5XR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96D-ma-yQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

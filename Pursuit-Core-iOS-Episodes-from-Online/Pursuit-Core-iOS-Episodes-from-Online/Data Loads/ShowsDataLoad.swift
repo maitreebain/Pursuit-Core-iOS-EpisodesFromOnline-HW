@@ -13,6 +13,7 @@ struct ShowsDataLoad: Decodable {
 }
 
 struct Name: Decodable {
+    let id: Int
     let name: String
     let rating: Rating?
     let image: Images?
