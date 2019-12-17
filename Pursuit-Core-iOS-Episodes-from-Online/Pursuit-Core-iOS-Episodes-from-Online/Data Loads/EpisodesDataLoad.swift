@@ -13,7 +13,7 @@ struct EpisodesDataLoad: Decodable {
     let name: String
     let season: Int
     let number: Int
-    let image: Image
+    let image: Image?
     let summary: String
     var cleanSummary: String {
         return summary.replacingOccurrences(of: "<p>", with: " ").replacingOccurrences(of: "</p>", with: " ")

@@ -35,7 +35,7 @@ class DetailsViewController: UIViewController {
         seasonLabel.text = "Season: \(episode.season)"
         episodeTextView.text = episode.cleanSummary
 
-        episodeImage.getImage(with: episode.image.original) { (result) in
+        episodeImage.getImage(with: episode.image?.original ?? "https://i5.walmartimages.com/asr/f678f030-7c05-456c-875c-902838795d1f_1.d86e9b52a1cecafe7b2e178383c20c44.jpeg" ) { (result) in
                     
                     switch result{
                     case .failure(let appError):

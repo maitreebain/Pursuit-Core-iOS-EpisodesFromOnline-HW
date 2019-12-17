@@ -22,7 +22,7 @@ class EpisodesCell: UITableViewCell {
         episodeName.text = episodes.name
         episodeDetail.text = "Season: \(episodes.season) Episode \(episodes.number)"
         
-        episodeImageView.getImage(with: episodes.image.medium) { (result) in
+        episodeImageView.getImage(with: episodes.image?.medium ?? "https://i5.walmartimages.com/asr/f678f030-7c05-456c-875c-902838795d1f_1.d86e9b52a1cecafe7b2e178383c20c44.jpeg") { (result) in
             
             switch result{
             case .failure(let appError):
