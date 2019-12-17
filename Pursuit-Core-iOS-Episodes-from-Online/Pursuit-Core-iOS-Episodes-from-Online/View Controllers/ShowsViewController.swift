@@ -95,11 +95,12 @@ extension ShowsViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textShouldReturn searchText: String) {
         
         if !searchText.isEmpty {
             loadData(for: searchText)
         }
         searchQuery = searchText
     }
+    
 }
